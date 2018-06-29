@@ -1,0 +1,42 @@
+%nav.navbar
+  .grid-container
+    .desktop
+      .part-1
+        .float-left
+          = link_to 'View Main Site', '#', class: 'button hollow light float-left'
+          %ul.menu.social-icons.float-left
+            = link_to 'https://www.facebook.com/groups/294203727305/' do
+              %li.icon
+                = image_tag 'facebook.svg'
+            = link_to 'https://twitter.com/effectivebirdco' do
+              %li.icon
+                = image_tag 'twitter.svg'
+            = link_to 'https://www.instagram.com/effectivebirdco/' do
+              %li.icon
+                = image_tag 'instagram.svg'
+            = link_to 'https://www.linkedin.com/company/effective-bird-control-uk-ltd' do
+              %li.icon
+                = image_tag 'linkedin.svg'
+        .float-right  
+          %ul.menu.contact-information
+            %li
+              = link_to 'mailto:info@ectivebirdcontrol.co.uk' do
+                = image_tag 'email.svg'
+                Email : info@ectivebirdcontrol.co.uk
+            %li
+              = link_to 'tel:01621779823' do
+                = image_tag 'phone.svg'
+                Phone : 01621 779 823
+      .part-2
+        .text-center
+          = image_tag 'logo-brand.png', class: 'logo'
+    .mobile
+      .logo
+        = image_tag 'logo-brand.png', class: 'logo'
+      .menu-icon-wrapper(data-toggle="offCanvas")
+        .menu-icon
+          .icon
+  = link_to 'tel:01621779823', class: 'float-btn' do
+    = image_tag 'phone.svg'
+    .float-menu-to-reveal
+      %h3 01621779823

@@ -1,0 +1,21 @@
+!!!
+%html
+  %head
+    %meta{ content: "text/html; charset=UTF-8", "http-equiv" => "Content-Type" }
+    %meta{ charset: "utf-8"}
+    %meta{ content: "width=device-width, initial-scale=1, maximum-scale=1", name: "viewport" }
+    %title= current_account.name
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+    .off-canvas.position-right#offCanvas(data-off-canvas)
+      = render 'default/shared/mobile-menu'
+    .off-canvas-content(data-off-canvas-content)
+      .page_container
+        = render 'default/shared/navigation'
+        .page-wrapper
+          = yield
+          = javascript_include_tag 'application'
+        = render 'default/shared/footer'
+        = yield(:javascript)
+

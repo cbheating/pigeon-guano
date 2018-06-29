@@ -1,0 +1,72 @@
+.header
+  .grid-container
+    .grid-x
+      .cell.large-10.large-offset-1
+        .align-items
+          .align-wrap
+            .header__content
+              .header__text
+                %h3
+                  Welcome to Effective bird control
+                  %br
+                  Pigeon Guano Cleaning
+              = link_to '#first-section' do
+                .header__button
+                  %h5
+                    %strong
+                      See Below
+            .text-center
+              = link_to 'View Our Main Site', 'https://effectivebirdcontrol.co.uk/', class: 'button hollow light'
+
+.intro#first-section
+  .grid-x
+    .cell.large-6
+      .intro__wrap
+        .intro__text
+          != @page.content(:intro_text)
+    .cell.large-6
+      .intro__image
+
+.what-we-do
+  .grid-container
+    .text-center
+      .text
+        != @page.content(:what_we_do_text)
+
+.gallery
+  .grid-container
+    .fancy-title
+      %h3.title
+        %span Our On Site Images
+    .grid-x.large-up-3.grid-padding-x.grid-padding-y
+      - @page.content(:gallery).structure_items.sorted_by_structure.each_with_index do | image, index |
+        - if index <= 5
+          .cell
+            .gallery__image{style: "background-image: url(#{asset_path(image.content(:image))})"}
+        - else
+          .cell.hide-image
+            .gallery__image{style: "background-image: url(#{asset_path(image.content(:image))})"}
+    .text-center
+      .button.read-more View More Image
+
+.company
+  .grid-x
+    .cell.large-6
+      .company__image
+    .cell.large-6
+      .company__wrap
+        .company__text
+          != @page.content(:end_text)
+
+.clients
+  %ul.menu.align-center
+    %li
+      = image_tag 'clients/client-1.png'
+    %li
+      = image_tag 'clients/client-2.png'
+    %li
+      = image_tag 'clients/client-3.png'
+    %li
+      = image_tag 'clients/client-4.png'
+    %li
+      = image_tag 'clients/client-5.png'

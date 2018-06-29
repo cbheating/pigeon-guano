@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
+@import 'vendor/*';
+@import 'layouts/*';
+@import 'pages/*';
+
+.fancy-title {
+  text-align: center;
+  position: relative;
+  @include breakpoint(large) {
+    height: 50px;
+    &:before {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 8px;
+      position: relative;
+      top: 50%;
+      transform: skewX(-45deg) translateY(-50%);
+      -ms-transform: skewX(-45deg) translateY(-50%);
+      -webkit-transform: skewX(-45deg) translateY(-50%);
+      background-color: $secondary-color;
+    }
+    .title {
+    display: inline-block;
+    line-height: 50px;
+    height: 50px;
+    padding: 0 20px;
+    margin: 0 auto;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+      &:before {
+        content: '';
+        display: block;
+        background: #fff;
+        width: 150%;
+        height: 100%;
+        position: absolute;
+        top: 50%;
+        left: -75%;
+        transform: skewX(-45deg) translate(25%, -50%);
+        -ms-transform: skewX(-45deg) translate(25%, -50%);
+        -webkit-transform: skewX(-45deg) translate(25%, -50%);
+        z-index: 9;
+      }
+      span {
+        position: relative;
+        z-index: 10;
+      }
+    }
+  }
+}
+
+.button.hollow.light {
+  border-color: $white;
+  color: $white;
+  &:hover {
+    background-color: $primary-color;
+    border-color: $primary-color;
+    color: $white;
+  }
+}
